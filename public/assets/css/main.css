@@ -82,7 +82,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #2e3842;
+		background: #2e333b;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -121,7 +121,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			body, input, select, textarea {
 				font-size: 11pt;
@@ -176,7 +176,7 @@ input, select, textarea {
 		line-height: 1.75em;
 	}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			h2 {
 				font-size: 1.1em;
@@ -190,7 +190,7 @@ input, select, textarea {
 		line-height: 1.75em;
 	}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			h3 {
 				font-size: 1em;
@@ -277,6 +277,51 @@ input, select, textarea {
 
 	.align-right {
 		text-align: right;
+	}
+
+	.background-video {
+		width: 100vw;
+		height: 100vh;
+		pointer-events: none;
+		margin: 0;
+		overflow: hidden;
+		position: fixed;
+		z-index: -10000;
+		top: 0;
+		left: 0;
+	}
+		
+	iframe {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100vw;
+	height: 110vh;
+	transform: translate(-50%, -50%);
+	}
+
+	@media (min-aspect-ratio: 16/9) {
+		.background-video iframe {
+		  /* height = 100 * (9 / 16) = 56.25 */
+		  height: 56.25vw;
+		}
+	}
+		  
+	@media (max-aspect-ratio: 16/9) {
+		.background-video iframe {
+			/* width = 100 / (9 / 16) = 177.777777 */
+			width: 177.78vh;
+		}
+	}
+
+	#background-picture {
+		overflow: hidden;
+		position: fixed;
+		z-index: -10001;
+		min-height: 100%;
+		min-width: 100%;
+		top: 0;
+		left: 0;
 	}
 
 /* Row */
@@ -1257,7 +1302,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			.row {
 				display: flex;
@@ -1791,7 +1836,7 @@ input, select, textarea {
 			top: 0;
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			header.major {
 				margin: 0 0 2em 0;
@@ -2064,7 +2109,7 @@ input, select, textarea {
 				font-size: 1.5em;
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 768px) {
 
 				.icon.major {
 					font-size: 1em;
@@ -2316,7 +2361,7 @@ input, select, textarea {
 				padding-right: 3.5em;
 			}
 
-				@media screen and (max-width: 736px) {
+				@media screen and (max-width: 768px) {
 
 					ul.icons.major li {
 						padding: 0 1em !important;
@@ -2516,7 +2561,7 @@ input, select, textarea {
 			opacity: 0.25;
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			input[type="submit"],
 			input[type="reset"],
@@ -2638,7 +2683,7 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 768px) {
 
 				.features li {
 					padding: 3em 0 1em 0 ;
@@ -2772,7 +2817,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			.spotlight .content {
 				padding: 3em 2em 1em 2em ;
@@ -2783,7 +2828,9 @@ input, select, textarea {
 /* Wrapper */
 
 	.wrapper {
-		padding: 6em 0 4em 0 ;
+		padding: 6em 0 4em 0;
+		max-width: 70em;
+		margin: auto;
 	}
 
 		.wrapper > .inner {
@@ -2962,7 +3009,7 @@ input, select, textarea {
 					background-color: rgba(255, 255, 255, 0.2);
 				}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 768px) {
 
 				.wrapper.style1 .features li {
 					border-top-color: rgba(0, 0, 0, 0.125);
@@ -3125,7 +3172,7 @@ input, select, textarea {
 					background-color: rgba(255, 255, 255, 0.2);
 				}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 768px) {
 
 				.wrapper.style3 .features li {
 					border-top-color: rgba(0, 0, 0, 0.125);
@@ -3288,7 +3335,7 @@ input, select, textarea {
 					background-color: rgba(0, 0, 0, 0.1);
 				}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 768px) {
 
 				.wrapper.style5 .features li {
 					border-top-color: #dfdfdf;
@@ -3304,7 +3351,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			.wrapper {
 				padding: 3em 2em 1em 2em ;
@@ -3337,14 +3384,14 @@ input, select, textarea {
 		}
 
 	#menu {
-		-moz-transform: translateX(-20em);
-		-webkit-transform: translateX(-20em);
-		-ms-transform: translateX(-20em);
-		transform: translateX(-20em);
-		-moz-transition: -moz-transform 0s ease;
-		-webkit-transition: -webkit-transform 0s ease;
-		-ms-transition: -ms-transform 0s ease;
-		transition: transform 0s ease;
+		-moz-transform: translateX(15em);
+		-webkit-transform: translateX(15em);
+		-ms-transform: translateX(15em);
+		transform: translateX(15em);
+		-moz-transition: -moz-transform 0.5s ease;
+		-webkit-transition: -webkit-transform 0.5s ease;
+		-ms-transition: -ms-transform 0.5s ease;
+		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
 		background: #0e0e0e;
 		color: #ffffff;
@@ -3353,9 +3400,9 @@ input, select, textarea {
 		overflow-y: auto;
 		padding: 3em 2em;
 		position: fixed;
-		left: 0;
+		right: 0;
 		top: 0;
-		width: 20em;
+		width: 15em;
 		z-index: 10002;
 	}
 
@@ -3387,7 +3434,7 @@ input, select, textarea {
 					text-transform: uppercase;
 				}
 
-					@media screen and (max-width: 736px) {
+					@media screen and (max-width: 768px) {
 
 						#menu ul > li > a {
 							line-height: 3em;
@@ -3410,7 +3457,7 @@ input, select, textarea {
 			width: 7em;
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			#menu {
 				padding: 3em 1.5em;
@@ -3435,7 +3482,7 @@ input, select, textarea {
 
 /* Header */
 
-	#header {
+	#header div {
 		-moz-transition: background-color 0.2s ease;
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
@@ -3453,7 +3500,18 @@ input, select, textarea {
 		padding: 0px 10%;
 	}
 
-		#header h1 {
+		@media screen and (min-width: 1440px) {
+			#header div {
+				padding: 0 calc((50% - 720px) + 144px);
+			}
+		}
+		@media screen and (max-width: 768px) {
+			#header div {
+				padding-left: 1.5em;
+			}
+		}
+
+		#header div h1 {
 			-moz-transition: opacity 0.2s ease;
 			-webkit-transition: opacity 0.2s ease;
 			-ms-transition: opacity 0.2s ease;
@@ -3465,7 +3523,7 @@ input, select, textarea {
 			top: 0;
 		}
 
-			#header a {
+			#header div a {
 				border: 0;
 				display: grid;
 				height: inherit;
@@ -3473,30 +3531,37 @@ input, select, textarea {
 				align-content: center;
 			}
 
-				@media screen and (max-width: 736px) {
-
-					#header a {
-						font-size: 0.8em;
-					}
-
+			@media screen and (max-width: 768px) {
+				#header div a {
+					font-size: 0.8em;
 				}
-
-		#header #menu-main {
-			width: 100%;
-			padding: 0 5em;
-		}
-
-			#header #menu-main ul {
-				display: flex;
-				justify-content: space-between;
-				margin: 0;
-				padding-left: 5em;
 			}
 
-				#header #menu-main ul li {
+		#header div #menu-main {
+			width: 100%;
+			padding: 0;
+		}
+
+		@media screen and (max-width: 768px) {
+			#header div #menu-main {
+				display: none;
+			}
+		}
+
+			#header div #menu-main ul {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin: 0;
+				padding-left: 8%;
+			}
+
+				#header div #menu-main ul li {
 					padding: 0;
 					list-style: none;
 				}
+
+
 		
 		#header nav {
 			height: inherit;
@@ -3504,6 +3569,13 @@ input, select, textarea {
 			position: absolute;
 			right: 0;
 			top: 0;
+			z-index: 10001;
+		}
+
+		@media screen and (min-width: 769px) {
+			#header nav {
+				display: none;
+			}
 		}
 
 			#header nav > ul {
@@ -3522,7 +3594,6 @@ input, select, textarea {
 						border: 0;
 						color: #fff;
 						display: block;
-						font-size: 0.8em;
 						letter-spacing: 0.225em;
 						padding: 0 1.5em;
 						text-transform: uppercase;
@@ -3530,7 +3601,13 @@ input, select, textarea {
 
 						#header nav > ul > li > a.menuToggle {
 							outline: 0;
-							position: relative;
+							position: fixed;
+							padding: 0 1.5em;
+							height: 7em;
+							display: flex;
+							align-items: center;
+							top: 0;
+							right: 0;
 						}
 
 							#header nav > ul > li > a.menuToggle:after {
@@ -3539,29 +3616,24 @@ input, select, textarea {
 								background-repeat: no-repeat;
 								content: '';
 								display: inline-block;
-								height: 3.75em;
+								height: 1.5em;
 								vertical-align: top;
 								width: 2em;
 							}
 
-							@media screen and (max-width: 736px) {
-
+							/* @media screen and (max-width: 768px) {
 								#header nav > ul > li > a.menuToggle {
 									padding: 0 1.5em;
 								}
-
 									#header nav > ul > li > a.menuToggle span {
 										display: none;
 									}
+							} */
 
-							}
-
-						@media screen and (max-width: 736px) {
-
+						@media screen and (max-width: 768px) {
 							#header nav > ul > li > a {
 								padding: 0 0 0 1.5em;
 							}
-
 						}
 
 					#header nav > ul > li:first-child {
@@ -3602,6 +3674,7 @@ input, select, textarea {
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+		margin-bottom: 6em;
 	}
 
 		#banner h1 {
@@ -3609,10 +3682,10 @@ input, select, textarea {
 			-webkit-transform: scale(1);
 			-ms-transform: scale(1);
 			transform: scale(1);
-			-moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
-			-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
-			-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
-			transition: transform 0.5s ease, opacity 0.5s ease;
+			-moz-transition: -moz-transform 0.3s ease, opacity 0.3s ease;
+			-webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease;
+			-ms-transition: -ms-transform 0.3s ease, opacity 0.3s ease;
+			transition: transform 0.3s ease, opacity 0.3s ease;
 			display: inline-block;
 			font-size: 2em;
 			opacity: 1;
@@ -3622,14 +3695,14 @@ input, select, textarea {
 		}
 
 			#banner h1:before, #banner h1:after {
-				-moz-transition: width 0.5s ease;
-				-webkit-transition: width 0.5s ease;
-				-ms-transition: width 0.5s ease;
-				transition: width 0.5s ease;
-				-moz-transition-delay: 0.5s;
-				-webkit-transition-delay: 0.5s;
-				-ms-transition-delay: 0.5s;
-				transition-delay: 0.5s;
+				-moz-transition: width 0.3s ease;
+				-webkit-transition: width 0.3s ease;
+				-ms-transition: width 0.3s ease;
+				transition: width 0.3s ease;
+				-moz-transition-delay: 0.3s;
+				-webkit-transition-delay: 0.3s;
+				-ms-transition-delay: 0.3s;
+				transition-delay: 0.3s;
 				background: #fff;
 				content: '';
 				display: block;
@@ -3662,10 +3735,10 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease;
 			-ms-transition: -ms-transform 0.3s ease, opacity 0.3s ease;
 			transition: transform 0.3s ease, opacity 0.3s ease;
-			-moz-transition-delay: 3s;
-			-webkit-transition-delay: 3s;
-			-ms-transition-delay: 3s;
-			transition-delay: 3s;
+			-moz-transition-delay: 1.5s;
+			-webkit-transition-delay: 1.5s;
+			-ms-transition-delay: 1.5s;
+			transition-delay: 1.5s;
 			-moz-transform: translateY(0);
 			-webkit-transform: translateY(0);
 			-ms-transform: translateY(0);
@@ -3705,16 +3778,16 @@ input, select, textarea {
 
 		#banner:after {
 			pointer-events: none;
-			-moz-transition: opacity 2s ease-in-out;
-			-webkit-transition: opacity 2s ease-in-out;
-			-ms-transition: opacity 2s ease-in-out;
-			transition: opacity 2s ease-in-out;
-			-moz-transition-delay: 1s;
-			-webkit-transition-delay: 1s;
-			-ms-transition-delay: 1s;
-			transition-delay: 1s;
+			-moz-transition: opacity 1.5s ease-in-out;
+			-webkit-transition: opacity 1.5s ease-in-out;
+			-ms-transition: opacity 1.5s ease-in-out;
+			transition: opacity 1.5s ease-in-out;
+			-moz-transition-delay: 0.5s;
+			-webkit-transition-delay: 0.5s;
+			-ms-transition-delay: 0.5s;
+			transition-delay: 0.5s;
 			content: '';
-			background: #0e0e0e;
+			background: #2e333b;
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -3724,12 +3797,11 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			#banner {
-				padding: 7em 3em 5em 3em ;
+				padding: 7em 3em 0 3em ;
 				height: auto;
-				min-height: 0;
 			}
 
 				#banner h1 {
@@ -3822,7 +3894,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			#cta .inner .actions {
 				max-width: none;
@@ -3834,6 +3906,7 @@ input, select, textarea {
 
 	#main > header {
 		padding: 12em 0 10em 0 ;
+		/* position: absolute; */
 		background-image: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0)), url("../../images/banner.png");
 		background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0)), url("../../images/banner.png");
 		background-image: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0)), url("../../images/banner.png");
@@ -3884,7 +3957,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			#main > header {
 				padding: 5em 3em 3em 3em ;
@@ -3907,6 +3980,7 @@ input, select, textarea {
 		padding: 6em 0 4em 0 ;
 		background-color: #1d242a;
 		text-align: center;
+		margin-top: 4em;
 	}
 
 		#footer .icons {
@@ -3972,7 +4046,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			#footer {
 				padding: 3em 2em 1em 2em ;
@@ -3983,15 +4057,17 @@ input, select, textarea {
 /* Landing */
 
 	body.landing #page-wrapper {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/banner.png");
-		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/banner.png");
-		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/banner.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/banner.png");
+		/* position: absolute; */
+		background-clip: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/background.png");
+		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/background.png");
+		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/background.png");
+		background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/background.png");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		padding-top: 0;
+		z-index: -1;
 	}
 
 	body.landing #footer {
@@ -4004,6 +4080,7 @@ input, select, textarea {
 
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
+		/* position: absolute; */
 		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/banner.png");
 		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/banner.png");
 		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/banner.png");
